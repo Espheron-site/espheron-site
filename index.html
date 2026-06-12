@@ -3,107 +3,357 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Espheron Soluções em Engenharia</title>
+<title>Espheron | Soluções em Engenharia e Automação Industrial</title>
 
 <style>
+:root{
+--gold:#d4a017;
+--dark:#050505;
+--gray:#151515;
+--text:#f2f2f2;
+}
+
+*{
+box-sizing:border-box;
+}
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#000;
+background:var(--dark);
+color:var(--text);
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.85);
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:10;
+border-bottom:1px solid rgba(212,160,23,0.4);
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:var(--gold);
+letter-spacing:2px;
+}
+
+nav a{
 color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:14px;
 }
 
 .hero{
-height:100vh;
+min-height:100vh;
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
-text-align:center;
-background:linear-gradient(to bottom,#000,#111);
+padding:120px 8% 80px;
+background:
+linear-gradient(90deg,rgba(0,0,0,0.95),rgba(0,0,0,0.75)),
+radial-gradient(circle at right,#332400,#000 55%);
 }
 
-h1{
-font-size:70px;
-color:#d4a017;
-margin:0;
+.hero-content{
+max-width:850px;
 }
 
-h2{
-font-size:28px;
-font-weight:300;
+.hero h1{
+font-size:76px;
+color:var(--gold);
+margin:0 0 15px;
+letter-spacing:3px;
 }
 
-p{
-max-width:900px;
-line-height:1.8;
-font-size:18px;
+.hero h2{
+font-size:34px;
+font-weight:400;
+margin:0 0 25px;
 }
 
-.botao{
-background:#d4a017;
-color:black;
-padding:15px 30px;
+.hero p{
+font-size:20px;
+line-height:1.7;
+color:#ddd;
+max-width:760px;
+}
+
+.buttons{
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 28px;
+margin-right:15px;
+border-radius:4px;
 text-decoration:none;
 font-weight:bold;
-border-radius:5px;
-margin-top:20px;
 }
 
-.servicos{
-padding:80px;
-background:#111;
+.btn-gold{
+background:var(--gold);
+color:#000;
+}
+
+.btn-outline{
+border:1px solid var(--gold);
+color:var(--gold);
+}
+
+section{
+padding:90px 8%;
+}
+
+.section-title{
+font-size:38px;
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.section-subtitle{
+font-size:18px;
+color:#ccc;
+max-width:850px;
+line-height:1.7;
+margin-bottom:45px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:24px;
 }
 
 .card{
-background:#1a1a1a;
-padding:20px;
-margin:15px;
-border-left:4px solid #d4a017;
+background:linear-gradient(180deg,#1b1b1b,#101010);
+padding:28px;
+border-left:4px solid var(--gold);
+border-radius:6px;
+min-height:190px;
+box-shadow:0 0 25px rgba(0,0,0,0.35);
 }
 
-</style>
+.card h3{
+color:var(--gold);
+font-size:22px;
+margin-top:0;
+}
 
+.card p{
+color:#ccc;
+line-height:1.6;
+}
+
+.dark-section{
+background:#0d0d0d;
+}
+
+.tech-list{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.tech{
+border:1px solid rgba(212,160,23,0.5);
+padding:14px 22px;
+border-radius:4px;
+color:#eee;
+background:#111;
+}
+
+.destaque{
+background:
+linear-gradient(90deg,rgba(212,160,23,0.15),rgba(0,0,0,0.1)),
+#111;
+border-left:5px solid var(--gold);
+padding:45px;
+border-radius:6px;
+font-size:21px;
+line-height:1.7;
+}
+
+footer{
+background:#000;
+padding:55px 8%;
+border-top:1px solid rgba(212,160,23,0.5);
+}
+
+footer h2{
+color:var(--gold);
+margin-top:0;
+}
+
+footer p{
+line-height:1.8;
+color:#ccc;
+}
+
+@media(max-width:700px){
+.hero h1{
+font-size:48px;
+}
+
+.hero h2{
+font-size:25px;
+}
+
+nav{
+display:none;
+}
+
+.btn{
+margin-bottom:12px;
+}
+}
+</style>
 </head>
 
 <body>
 
+<header>
+<div class="logo">ESPHERON</div>
+<nav>
+<a href="#especialidades">Especialidades</a>
+<a href="#servicos">Serviços</a>
+<a href="#tecnologias">Tecnologias</a>
+<a href="#contato">Contato</a>
+</nav>
+</header>
+
 <section class="hero">
-
+<div class="hero-content">
 <h1>ESPHERON</h1>
-
-<h2>Soluções em Engenharia e Manutenção</h2>
-
+<h2>Engenharia, Automação e Resultados para a Indústria</h2>
 <p>
-Especialistas em Automação Industrial,
-Motion Control, Sistemas Safety,
-Visão Industrial, Retrofit,
-Comissionamento e Engenharia Elétrica.
+Soluções em automação industrial, motion control, sistemas safety, visão industrial,
+diagnóstico avançado de falhas, retrofit, documentação técnica e comissionamento industrial.
 </p>
 
-<a class="botao" href="https://wa.me/5541985403480">
-Solicitar Orçamento
-</a>
-
+<div class="buttons">
+<a class="btn btn-gold" href="https://wa.me/5541985403480" target="_blank">Solicitar Orçamento</a>
+<a class="btn btn-outline" href="#especialidades">Conhecer Especialidades</a>
+</div>
+</div>
 </section>
 
-<section class="servicos">
+<section id="especialidades">
+<h2 class="section-title">Especialidades Técnicas</h2>
+<p class="section-subtitle">
+Atuação em sistemas industriais de alta complexidade, com foco em produtividade,
+confiabilidade operacional, segurança e redução de tempo de parada.
+</p>
 
-<h2>Especialidades</h2>
+<div class="grid">
+<div class="card">
+<h3>Motion Control</h3>
+<p>Controle de movimento, posicionamento, sincronismo eletrônico e aplicações com servoacionamentos Mitsubishi e Yaskawa.</p>
+</div>
 
-<div class="card">Automação Industrial</div>
-<div class="card">Motion Control</div>
-<div class="card">Sistemas Pilz PSS3000 e PAS4000</div>
-<div class="card">Sistemas de Visão Keyence</div>
-<div class="card">Servoacionamentos Yaskawa</div>
-<div class="card">Servoacionamentos Mitsubishi</div>
-<div class="card">Diagnóstico Avançado de Falhas</div>
-<div class="card">Redução de Tempo de Ciclo</div>
-<div class="card">Documentação Técnica Industrial</div>
-<div class="card">Retrofit e Modernização</div>
+<div class="card">
+<h3>Sistemas Safety</h3>
+<p>Experiência em sistemas Pilz PSS3000, PAS4000, adequações NR12, intertravamentos e validação de segurança.</p>
+</div>
 
+<div class="card">
+<h3>Visão Industrial</h3>
+<p>Integração e parametrização de sistemas de visão Keyence para inspeção, presença, leitura e controle de qualidade.</p>
+</div>
+
+<div class="card">
+<h3>Diagnóstico de Falhas</h3>
+<p>Troubleshooting industrial, análise de causa raiz, falhas intermitentes e recuperação operacional de equipamentos críticos.</p>
+</div>
+
+<div class="card">
+<h3>Redução de Ciclo</h3>
+<p>Otimização de sequências operacionais, eliminação de gargalos e aumento da eficiência produtiva.</p>
+</div>
+
+<div class="card">
+<h3>Erhardt+Leimer</h3>
+<p>Sistemas de guiamento, centralização, alinhamento e controle de posição em processos industriais contínuos.</p>
+</div>
+</div>
 </section>
+
+<section id="servicos" class="dark-section">
+<h2 class="section-title">Serviços</h2>
+<p class="section-subtitle">
+Soluções completas para automação, engenharia elétrica, modernização e suporte técnico industrial.
+</p>
+
+<div class="grid">
+<div class="card">
+<h3>Automação Industrial</h3>
+<p>Programação de PLCs, IHMs, SCADA, redes industriais, integração e controle de processos.</p>
+</div>
+
+<div class="card">
+<h3>Engenharia Elétrica</h3>
+<p>Diagramas elétricos, levantamento em campo, retrofit de painéis, adequações e padronização documental.</p>
+</div>
+
+<div class="card">
+<h3>Comissionamento</h3>
+<p>Startup, testes funcionais, parametrização, validação de processos e suporte técnico presencial ou remoto.</p>
+</div>
+
+<div class="card">
+<h3>Documentação Técnica</h3>
+<p>Organização de diagramas, listas de I/O, backups de PLC/IHM, procedimentos e engenharia reversa.</p>
+</div>
+</div>
+</section>
+
+<section id="tecnologias">
+<h2 class="section-title">Tecnologias e Plataformas</h2>
+<p class="section-subtitle">
+Experiência com tecnologias amplamente utilizadas em automação industrial e sistemas de controle.
+</p>
+
+<div class="tech-list">
+<div class="tech">Rockwell Automation</div>
+<div class="tech">Allen-Bradley</div>
+<div class="tech">Mitsubishi Electric</div>
+<div class="tech">Omron</div>
+<div class="tech">Yaskawa</div>
+<div class="tech">Pilz</div>
+<div class="tech">Keyence</div>
+<div class="tech">Phoenix Contact</div>
+<div class="tech">Weidmüller</div>
+<div class="tech">Pro-face</div>
+<div class="tech">Erhardt+Leimer</div>
+</div>
+</section>
+
+<section class="dark-section">
+<h2 class="section-title">Diferencial Espheron</h2>
+<div class="destaque">
+Atuação especializada em diagnóstico avançado de falhas, motion control, sistemas safety e otimização de equipamentos industriais, com foco na redução de tempo de ciclo, aumento da disponibilidade operacional e melhoria da confiabilidade dos processos.
+</div>
+</section>
+
+<footer id="contato">
+<h2>Contato</h2>
+<p>
+<strong>Espheron Soluções em Engenharia e Manutenção</strong><br>
+João Carlos Francisco<br>
+Telefone: (41) 98540-3480<br>
+E-mail: joao.francisco@espheron.com<br>
+Curitiba – Paraná
+</p>
+
+<a class="btn btn-gold" href="https://wa.me/5541985403480" target="_blank">Falar pelo WhatsApp</a>
+</footer>
 
 </body>
 </html>
