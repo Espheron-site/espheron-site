@@ -228,7 +228,68 @@ color:#ccc;
 .portfolio .btn{
   display:inline-block;
 }
+.footer-intro{
+  max-width:850px;
+  margin:0 auto 35px;
+  color:#ddd;
+  font-size:18px;
+  line-height:1.6;
+  text-align:center;
+}
+
+.contatos-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(280px, 1fr));
+  gap:30px;
+  max-width:1000px;
+  margin:40px auto;
+}
+
+.contato-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(212,160,23,0.35);
+  border-radius:14px;
+  padding:30px;
+  text-align:center;
+}
+
+.contato-card h3{
+  color:#d4a017;
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.contato-card .cargo{
+  color:#fff;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.contato-card p{
+  color:#ddd;
+  line-height:1.7;
+}
+
+.contato-card a{
+  color:#d4a017;
+}
+
+.contato-card .btn{
+  color:#000;
+  margin-top:15px;
+  display:inline-block;
+}
+
+.footer-local{
+  margin-top:35px;
+  color:#aaa;
+  text-align:center;
+  line-height:1.6;
+}
 @media(max-width:700px){
+ .contatos-grid{
+  grid-template-columns:1fr;
+} 
 .hero h1{
 font-size:48px;
 }
@@ -395,16 +456,46 @@ Experiência com tecnologias amplamente utilizadas em automação industrial e s
 
 <footer id="contato">
   <h2>Contato</h2>
-  <p>
-    <strong>Espheron Soluções em Engenharia e Manutenção</strong><br>
-    João Carlos Francisco<br>
-    Telefone: (41) 98540-3480<br>
-    E-mail: joao.francisco@espheron.com<br>
-    Curitiba – Paraná
+
+  <p class="footer-intro">
+    Entre em contato com a equipe Espheron para projetos de automação industrial,
+    engenharia, documentação técnica, retrofit e suporte especializado.
   </p>
 
-  <a class="btn btn-gold" href="https://wa.me/5541985403480" target="_blank">Falar pelo WhatsApp</a>
-</footer>
+  <div class="contatos-grid">
 
-</body>
-</html>
+    <div class="contato-card">
+      <h3>João Carlos Francisco</h3>
+      <p class="cargo">Diretor Técnico</p>
+
+      <p>
+        Telefone: <a href="tel:+5541985403480">(41) 98540-3480</a><br>
+        E-mail: <a href="mailto:joao.francisco@espheron.com">joao.francisco@espheron.com</a>
+      </p>
+
+      <a class="btn btn-gold" href="https://wa.me/5541985403480" target="_blank" rel="noopener">
+        Falar com João
+      </a>
+    </div>
+
+    <div class="contato-card">
+      <h3>Igor Andre de Oliveira</h3>
+      <p class="cargo">Gestor de Projetos</p>
+
+      <p>
+        Telefone: <a href="tel:+5541992322363">(41) 99232-2363</a><br>
+        E-mail: <a href="mailto:Igor.oliveira@espheron.com">Igor.oliveira@espheron.com</a>
+      </p>
+
+      <a class="btn btn-gold" href="https://wa.me/5541992322363" target="_blank" rel="noopener">
+        Falar com Igor
+      </a>
+    </div>
+
+  </div>
+
+  <p class="footer-local">
+    Espheron Soluções em Engenharia e Manutenção<br>
+    Curitiba – Paraná
+  </p>
+</footer>
