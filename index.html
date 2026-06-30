@@ -1,501 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Espheron | Soluções em Engenharia e Automação Industrial</title>
-
-<style>
-:root{
---gold:#d4a017;
---dark:#050505;
---gray:#151515;
---text:#f2f2f2;
-}
-
-*{
-box-sizing:border-box;
-}
-
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:var(--dark);
-color:var(--text);
-}
-
-header{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,0.85);
-padding:18px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:10;
-border-bottom:1px solid rgba(212,160,23,0.4);
-}
-
-.logo{
-font-size:24px;
-font-weight:bold;
-color:var(--gold);
-letter-spacing:2px;
-}
-.logo img{
-height:42px;
-width:auto;
-display:block;
-}  
-nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-font-size:14px;
-}
-
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-padding:120px 8% 80px;
-background:
-linear-gradient(90deg,rgba(0,0,0,0.65),rgba(0,0,0,0.35)),
-url('banner.png');
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-}
-
-.hero-content{
-max-width:850px;
-}
-
-.hero h1{
-font-size:76px;
-color:var(--gold);
-margin:0 0 15px;
-letter-spacing:3px;
-}
-
-.hero h2{
-font-size:34px;
-font-weight:400;
-margin:0 0 25px;
-}
-
-.hero p{
-font-size:20px;
-line-height:1.7;
-color:#ddd;
-max-width:760px;
-}
-
-.buttons{
-margin-top:35px;
-}
-
-.btn{
-display:inline-block;
-padding:15px 28px;
-margin-right:15px;
-border-radius:4px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.btn-gold{
-background:var(--gold);
-color:#000;
-}
-
-.btn-outline{
-border:1px solid var(--gold);
-color:var(--gold);
-}
-
-section{
-padding:90px 8%;
-}
-
-.section-title{
-font-size:38px;
-color:var(--gold);
-margin-bottom:15px;
-}
-
-.section-subtitle{
-font-size:18px;
-color:#ccc;
-max-width:850px;
-line-height:1.7;
-margin-bottom:45px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:24px;
-}
-
-.card{
-background:linear-gradient(180deg,#1b1b1b,#101010);
-padding:28px;
-border-left:4px solid var(--gold);
-border-radius:6px;
-min-height:190px;
-box-shadow:0 0 25px rgba(0,0,0,0.35);
-}
-
-.card h3{
-color:var(--gold);
-font-size:22px;
-margin-top:0;
-}
-
-.card p{
-color:#ccc;
-line-height:1.6;
-}
-
-.dark-section{
-background:#0d0d0d;
-}
-
-.tech-list{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-}
-
-.tech{
-border:1px solid rgba(212,160,23,0.5);
-padding:14px 22px;
-border-radius:4px;
-color:#eee;
-background:#111;
-}
-
-.destaque{
-background:
-linear-gradient(90deg,rgba(212,160,23,0.15),rgba(0,0,0,0.1)),
-#111;
-border-left:5px solid var(--gold);
-padding:45px;
-border-radius:6px;
-font-size:21px;
-line-height:1.7;
-}
-
-footer{
-background:#000;
-padding:55px 8%;
-border-top:1px solid rgba(212,160,23,0.5);
-}
-
-footer h2{
-color:var(--gold);
-margin-top:0;
-}
-
-footer p{
-line-height:1.8;
-color:#ccc;
-}
-.portfolio{
-  padding:80px 8%;
-  background:#0b0b0b;
-  text-align:center;
-  border-top:1px solid rgba(212,160,23,0.25);
-  border-bottom:1px solid rgba(212,160,23,0.25);
-}
-
-.portfolio h2{
-  color:#d4a017;
-  font-size:36px;
-  margin-bottom:20px;
-}
-
-.portfolio p{
-  max-width:850px;
-  margin:0 auto 30px;
-  color:#ddd;
-  font-size:18px;
-  line-height:1.6;
-}
-
-.portfolio .btn{
-  display:inline-block;
-}
-.footer-intro{
-  max-width:850px;
-  margin:0 auto 35px;
-  color:#ddd;
-  font-size:18px;
-  line-height:1.6;
-  text-align:center;
-}
-
-.contatos-grid{
-  display:grid;
-  grid-template-columns:repeat(2, minmax(280px, 1fr));
-  gap:30px;
-  max-width:1000px;
-  margin:40px auto;
-}
-
-.contato-card{
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(212,160,23,0.35);
-  border-radius:14px;
-  padding:30px;
-  text-align:center;
-}
-
-.contato-card h3{
-  color:#d4a017;
-  font-size:24px;
-  margin-bottom:8px;
-}
-
-.contato-card .cargo{
-  color:#fff;
-  font-weight:bold;
-  margin-bottom:20px;
-}
-
-.contato-card p{
-  color:#ddd;
-  line-height:1.7;
-}
-
-.contato-card a{
-  color:#d4a017;
-}
-
-.contato-card .btn{
-  color:#000;
-  margin-top:15px;
-  display:inline-block;
-}
-
-.footer-local{
-  margin-top:35px;
-  color:#aaa;
-  text-align:center;
-  line-height:1.6;
-}
-@media(max-width:700px){
- .contatos-grid{
-  grid-template-columns:1fr;
-} 
-.hero h1{
-font-size:48px;
-}
-
-.hero h2{
-font-size:25px;
-}
-
-nav{
-display:none;
-}
-
-.btn{
-margin-bottom:12px;
-}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espheron | Soluções em Engenharia e Automação Industrial</title>
+  <meta name="description" content="Soluções em automação industrial, motion control, sistemas safety, visão industrial, diagnóstico de falhas, retrofit e comissionamento industrial.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <header>
+    <a class="logo" href="#top" aria-label="Espheron">
+      <img src="logo.jpg" alt="Espheron" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
+      <span>ESPHERON</span>
+    </a>
+    <nav>
+      <a href="#especialidades">Especialidades</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#tecnologias">Tecnologias</a>
+      <a href="importacao-sob-encomenda/">Importação</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-<header>
-<div class="logo">
-<img src="logo.jpg" alt="Espheron">
-</div>
-<nav>
-<a href="#especialidades">Especialidades</a>
-<a href="#servicos">Serviços</a>
-<a href="#tecnologias">Tecnologias</a>
-<a href="#portfolio">Portfólio</a>
-<a href="#contato">Contato</a>
-</nav>
-</header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>ESPHERON</h1>
+        <h2>Engenharia, Automação e Resultados para a Indústria</h2>
+        <p>
+          Soluções em automação industrial, motion control, sistemas safety, visão industrial,
+          diagnóstico avançado de falhas, retrofit, documentação técnica e comissionamento industrial.
+        </p>
 
-<section class="hero">
-<div class="hero-content">
-<h1>ESPHERON</h1>
-<h2>Engenharia, Automação e Resultados para a Indústria</h2>
-<p>
-Soluções em automação industrial, motion control, sistemas safety, visão industrial,
-diagnóstico avançado de falhas, retrofit, documentação técnica e comissionamento industrial.
-</p>
+        <div class="buttons">
+          <a class="btn btn-gold" href="https://wa.me/5541985403480" target="_blank" rel="noopener">Solicitar Orçamento</a>
+          <a class="btn btn-outline" href="#especialidades">Conhecer Especialidades</a>
+          <a class="btn btn-outline" href="#portfolio">Ver Portfólio</a>
+        </div>
+      </div>
+    </section>
 
-<div class="buttons">
-<a class="btn btn-gold" href="https://wa.me/5541985403480" target="_blank">Solicitar Orçamento</a>
-<a class="btn btn-outline" href="#especialidades">Conhecer Especialidades</a>
-<a class="btn btn-outline" href="#portfolio">Ver Portfólio</a>
-</div>
-</div>
-</section>
-
-<section id="especialidades">
-<h2 class="section-title">Especialidades Técnicas</h2>
-<p class="section-subtitle">
-Atuação em sistemas industriais de alta complexidade, com foco em produtividade,
-confiabilidade operacional, segurança e redução de tempo de parada.
-</p>
-
-<div class="grid">
-<div class="card">
-<h3>Motion Control</h3>
-<p>Controle de movimento, posicionamento, sincronismo eletrônico e aplicações com servoacionamentos Mitsubishi e Yaskawa.</p>
-</div>
-
-<div class="card">
-<h3>Sistemas Safety</h3>
-<p>Experiência em sistemas Pilz PSS3000, PAS4000, adequações NR12, intertravamentos e validação de segurança.</p>
-</div>
-
-<div class="card">
-<h3>Visão Industrial</h3>
-<p>Integração e parametrização de sistemas de visão Keyence para inspeção, presença, leitura e controle de qualidade.</p>
-</div>
-
-<div class="card">
-<h3>Diagnóstico de Falhas</h3>
-<p>Troubleshooting industrial, análise de causa raiz, falhas intermitentes e recuperação operacional de equipamentos críticos.</p>
-</div>
-
-<div class="card">
-<h3>Redução de Ciclo</h3>
-<p>Otimização de sequências operacionais, eliminação de gargalos e aumento da eficiência produtiva.</p>
-</div>
-
-<div class="card">
-<h3>Erhardt+Leimer</h3>
-<p>Sistemas de guiamento, centralização, alinhamento e controle de posição em processos industriais contínuos.</p>
-</div>
-</div>
-</section>
-
-<section id="servicos" class="dark-section">
-<h2 class="section-title">Serviços</h2>
-<p class="section-subtitle">
-Soluções completas para automação, engenharia elétrica, modernização e suporte técnico industrial.
-</p>
-
-<div class="grid">
-<div class="card">
-<h3>Automação Industrial</h3>
-<p>Programação de PLCs, IHMs, SCADA, redes industriais, integração e controle de processos.</p>
-</div>
-
-<div class="card">
-<h3>Engenharia Elétrica</h3>
-<p>Diagramas elétricos, levantamento em campo, retrofit de painéis, adequações e padronização documental.</p>
-</div>
-
-<div class="card">
-<h3>Comissionamento</h3>
-<p>Startup, testes funcionais, parametrização, validação de processos e suporte técnico presencial ou remoto.</p>
-</div>
-
-<div class="card">
-<h3>Documentação Técnica</h3>
-<p>Organização de diagramas, listas de I/O, backups de PLC/IHM, procedimentos e engenharia reversa.</p>
-</div>
-</div>
-</section>
-
-<section id="tecnologias">
-<h2 class="section-title">Tecnologias e Plataformas</h2>
-<p class="section-subtitle">
-Experiência com tecnologias amplamente utilizadas em automação industrial e sistemas de controle.
-</p>
-
-<div class="tech-list">
-<div class="tech">Rockwell Automation</div>
-<div class="tech">Allen-Bradley</div>
-<div class="tech">Mitsubishi Electric</div>
-<div class="tech">Omron</div>
-<div class="tech">Yaskawa</div>
-<div class="tech">Pilz</div>
-<div class="tech">Keyence</div>
-<div class="tech">Phoenix Contact</div>
-<div class="tech">Weidmüller</div>
-<div class="tech">Pro-face</div>
-<div class="tech">Erhardt+Leimer</div>
-</div>
-</section>
-
-<section class="dark-section">
-  <h2 class="section-title">Diferencial Espheron</h2>
-  <div class="destaque">
-    Atuação especializada em diagnóstico avançado de falhas, motion control, sistemas safety e otimização de equipamentos industriais, com foco na redução de tempo de ciclo, aumento da disponibilidade operacional e melhoria da confiabilidade dos processos.
-  </div>
-</section>
-
-<section class="dark-section" id="portfolio">
-  <h2 class="section-title">Portfólio Técnico</h2>
-
-  <div class="destaque">
-    Conheça melhor a atuação da Espheron em automação industrial,
-    documentação técnica, retrofit, sistemas safety, motion control,
-    diagnóstico de falhas e comissionamento industrial.
-  </div>
-
-  <br>
-
-  <a class="btn btn-gold" href="portfolio_espheron.pdf" target="_blank" rel="noopener">
-    Baixar Portfólio em PDF
-  </a>
-</section>
-
-<footer id="contato">
-  <h2>Contato</h2>
-
-  <p class="footer-intro">
-    Entre em contato com a equipe Espheron para projetos de automação industrial,
-    engenharia, documentação técnica, retrofit e suporte especializado.
-  </p>
-
-  <div class="contatos-grid">
-
-    <div class="contato-card">
-      <h3>João Carlos Francisco</h3>
-      <p class="cargo">Diretor Técnico</p>
-
-      <p>
-        Telefone: <a href="tel:+5541985403480">(41) 98540-3480</a><br>
-        E-mail: <a href="mailto:joao.francisco@espheron.com">joao.francisco@espheron.com</a>
+    <section id="especialidades">
+      <h2 class="section-title">Especialidades Técnicas</h2>
+      <p class="section-subtitle">
+        Atuação em sistemas industriais de alta complexidade, com foco em produtividade,
+        confiabilidade operacional, segurança e redução de tempo de parada.
       </p>
 
-      <a class="btn btn-gold" href="https://wa.me/5541985403480" target="_blank" rel="noopener">
-        Falar com João
-      </a>
-    </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Motion Control</h3>
+          <p>Controle de movimento, posicionamento, sincronismo eletrônico e aplicações com servoacionamentos Mitsubishi e Yaskawa.</p>
+        </div>
 
-    <div class="contato-card">
-      <h3>Igor Andre de Oliveira</h3>
-      <p class="cargo">Gestor de Projetos</p>
+        <div class="card">
+          <h3>Sistemas Safety</h3>
+          <p>Experiência em sistemas Pilz PSS3000, PAS4000, adequações NR12, intertravamentos e validação de segurança.</p>
+        </div>
 
-      <p>
-        Telefone: <a href="tel:+5541992322363">(41) 99232-2363</a><br>
-        E-mail: <a href="mailto:Igor.oliveira@espheron.com">Igor.oliveira@espheron.com</a>
+        <div class="card">
+          <h3>Visão Industrial</h3>
+          <p>Integração e parametrização de sistemas de visão Keyence para inspeção, presença, leitura e controle de qualidade.</p>
+        </div>
+
+        <div class="card">
+          <h3>Diagnóstico de Falhas</h3>
+          <p>Troubleshooting industrial, análise de causa raiz, falhas intermitentes e recuperação operacional de equipamentos críticos.</p>
+        </div>
+
+        <div class="card">
+          <h3>Redução de Ciclo</h3>
+          <p>Otimização de sequências operacionais, eliminação de gargalos e aumento da eficiência produtiva.</p>
+        </div>
+
+        <div class="card">
+          <h3>Erhardt+Leimer</h3>
+          <p>Sistemas de guiamento, centralização, alinhamento e controle de posição em processos industriais contínuos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="dark-section">
+      <h2 class="section-title">Serviços</h2>
+      <p class="section-subtitle">
+        Soluções completas para automação, engenharia elétrica, modernização e suporte técnico industrial.
       </p>
 
-      <a class="btn btn-gold" href="https://wa.me/5541992322363" target="_blank" rel="noopener">
-        Falar com Igor
+      <div class="grid">
+        <div class="card">
+          <h3>Automação Industrial</h3>
+          <p>Programação de PLCs, IHMs, SCADA, redes industriais, integração e controle de processos.</p>
+        </div>
+
+        <div class="card">
+          <h3>Engenharia Elétrica</h3>
+          <p>Diagramas elétricos, levantamento em campo, retrofit de painéis, adequações e padronização documental.</p>
+        </div>
+
+        <div class="card">
+          <h3>Comissionamento</h3>
+          <p>Startup, testes funcionais, parametrização, validação de processos e suporte técnico presencial ou remoto.</p>
+        </div>
+
+        <div class="card">
+          <h3>Documentação Técnica</h3>
+          <p>Organização de diagramas, listas de I/O, backups de PLC/IHM, procedimentos e engenharia reversa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tecnologias">
+      <h2 class="section-title">Tecnologias e Plataformas</h2>
+      <p class="section-subtitle">
+        Experiência com tecnologias amplamente utilizadas em automação industrial e sistemas de controle.
+      </p>
+
+      <div class="tech-list">
+        <div class="tech">Rockwell Automation</div>
+        <div class="tech">Allen-Bradley</div>
+        <div class="tech">Mitsubishi Electric</div>
+        <div class="tech">Omron</div>
+        <div class="tech">Yaskawa</div>
+        <div class="tech">Pilz</div>
+        <div class="tech">Keyence</div>
+        <div class="tech">Phoenix Contact</div>
+        <div class="tech">Weidmüller</div>
+        <div class="tech">Pro-face</div>
+        <div class="tech">Erhardt+Leimer</div>
+      </div>
+    </section>
+
+    <section class="dark-section">
+      <div class="split">
+        <div>
+          <h2 class="section-title">Importação Técnica Sob Encomenda</h2>
+          <p class="section-subtitle">
+            Localização, validação, importação e revenda sob encomenda de componentes industriais,
+            peças técnicas e produtos de automação difíceis de encontrar no Brasil.
+          </p>
+        </div>
+        <div class="destaque">
+          Uma alternativa técnica e comercial para empresas que precisam manter equipamentos críticos em operação com segurança e rastreabilidade.
+          <div class="buttons">
+            <a class="btn btn-gold" href="importacao-sob-encomenda/">Conhecer a solução</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Diferencial Espheron</h2>
+      <div class="destaque">
+        Atuação especializada em diagnóstico avançado de falhas, motion control, sistemas safety e otimização de equipamentos industriais, com foco na redução de tempo de ciclo, aumento da disponibilidade operacional e melhoria da confiabilidade dos processos.
+      </div>
+    </section>
+
+    <section class="dark-section" id="portfolio">
+      <h2 class="section-title">Portfólio Técnico</h2>
+
+      <div class="destaque">
+        Conheça melhor a atuação da Espheron em automação industrial,
+        documentação técnica, retrofit, sistemas safety, motion control,
+        diagnóstico de falhas e comissionamento industrial.
+      </div>
+
+      <br>
+
+      <a class="btn btn-gold" href="portfolio_espheron.pdf" target="_blank" rel="noopener">
+        Baixar Portfólio em PDF
       </a>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <h2>Contato</h2>
+
+    <p class="footer-intro">
+      Entre em contato com a equipe Espheron para projetos de automação industrial,
+      engenharia, documentação técnica, retrofit e suporte especializado.
+    </p>
+
+    <div class="contatos-grid">
+      <div class="contato-card">
+        <h3>João Carlos Francisco</h3>
+        <p class="cargo">Diretor Técnico</p>
+
+        <p>
+          Telefone: <a href="tel:+5541985403480">(41) 98540-3480</a><br>
+          E-mail: <a href="mailto:joao.francisco@espheron.com">joao.francisco@espheron.com</a>
+        </p>
+
+        <a class="btn btn-gold" href="https://wa.me/5541985403480" target="_blank" rel="noopener">
+          Falar com João
+        </a>
+      </div>
+
+      <div class="contato-card">
+        <h3>Igor Andre de Oliveira</h3>
+        <p class="cargo">Gestor de Projetos</p>
+
+        <p>
+          Telefone: <a href="tel:+5541992322363">(41) 99232-2363</a><br>
+          E-mail: <a href="mailto:Igor.oliveira@espheron.com">Igor.oliveira@espheron.com</a>
+        </p>
+
+        <a class="btn btn-gold" href="https://wa.me/5541992322363" target="_blank" rel="noopener">
+          Falar com Igor
+        </a>
+      </div>
     </div>
 
-  </div>
-
-  <p class="footer-local">
-    Espheron Soluções em Engenharia e Manutenção<br>
-    Curitiba – Paraná
-  </p>
-</footer>
+    <p class="footer-local">
+      Espheron Soluções em Engenharia e Manutenção<br>
+      Curitiba - Paraná
+    </p>
+  </footer>
+</body>
+</html>
